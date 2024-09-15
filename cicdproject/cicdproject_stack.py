@@ -22,5 +22,5 @@ class CicdprojectStack(Stack):
                         synth=ShellStep("SynthStep",
                             input=CodePipelineSource.git_hub("JoHnZIN108/cicdproject", "master"),
                             commands=["npm install -g -aws-cdk", "python -m pip install -r requirement.txt",
-                                      "npm ci", "npx cdk synth"]
+                                      "npx cdk synth"]
                         ))
