@@ -13,14 +13,3 @@ class CicdprojectStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
-
-        queue = sqs.Queue(
-            self, "CicdprojectQueue",
-            visibility_timeout=Duration.seconds(300),
-        )
-
-        topic = sns.Topic(
-            self, "CicdprojectTopic"
-        )
-
-        topic.add_subscription(subs.SqsSubscription(queue))
