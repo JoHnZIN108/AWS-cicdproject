@@ -20,6 +20,6 @@ class CicdprojectStack(Stack):
         pipeline = CodePipeline(self, "MyPipeline",
                         pipeline_name="MyPipeline",
                         synth=ShellStep("SynthStep",
-                            input=CodePipelineSource.git_hub("joHnZIN108/cicdproject", "master"),
+                            input=CodePipelineSource.git_hub("JoHnZIN108/cicdproject", "master"),
                             commands=["npm install", "npm run build", "npx cdk synth"]
                         ))
