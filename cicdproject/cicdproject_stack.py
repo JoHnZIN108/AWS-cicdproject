@@ -18,9 +18,12 @@ class CicdprojectStack(Stack):
 
         # Creating a code pipeline
         pipeline = CodePipeline(self, "MyPipeline",
-                        pipeline_name="MyPipeline",
-                        synth=ShellStep("SynthStep",
-                            input=CodePipelineSource.git_hub("JoHnZIN108/cicdproject", "master"),
-                            commands=["python -m pip install -r requirement.txt",
-                                      "cdk synth"]
-                        ))
+                pipeline_name="MyPipeline",
+                synth=ShellStep("SynthStep",
+                    input=CodePipelineSource.git_hub("JoHnZIN108/cicdproject", "master"),
+                    commands=[
+                        "python -m pip install --upgrade pip",  # Update pip
+                        "pip install -r requirements.txt",      # Install Python dependencies
+                        "cdk synth"                             # Synthesize the CDK app
+                    ]
+                ))

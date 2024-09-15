@@ -3,11 +3,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - pip install -r requirements.txt  # Install Python dependencies
+      - python -m pip install --upgrade pip
+      - pip install -r requirements.txt
   build:
     commands:
-      - cdk synth  # Synthesize the CDK app
-artifacts:
-  files:
-    - '**/*'
-  base-directory: 'cdk.out'
+      - cdk synth
