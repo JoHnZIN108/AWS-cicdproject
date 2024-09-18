@@ -25,10 +25,10 @@ class ResourceStack(Stack):
                                     function_name="codepipeline_lambda",
                                     runtime=lambda_.Runtime.PYTHON_3_9,
                                     handler="demo_lambda.handler",
-                                    code=lambda_.Code.from_asset("./lambda_code"))
+                                    code=lambda_.Code.from_asset("../lambda_code"))
         
         bucket = s3.Bucket(self, "MyBucket",
                            versioned=True,
-                           bucket_name="my-demo-bucket-s3",
+                           bucket_name=f"my-demo-bucket-{self.account}-{self.region}",
                            removal_policy=cdk.RemovalPolicy.DESTROY,
                            block_public_access=s3.BlockPublicAccess.BLOCK_ALL)
