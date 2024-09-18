@@ -25,7 +25,7 @@ class ResourceStack(Stack):
                                     function_name="codepipeline_lambda",
                                     runtime=lambda_.Runtime.PYTHON_3_9,
                                     handler="demo_lambda.handler",
-                                    code=lambda_.Code.from_asset("../lambda_code"))
+                                    code=lambda_.Code.from_asset("./lambda_code"))
         
         bucket = s3.Bucket(self, "MyBucket",
                            versioned=True,
