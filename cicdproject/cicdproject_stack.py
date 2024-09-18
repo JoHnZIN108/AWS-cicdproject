@@ -24,8 +24,9 @@ class CicdprojectStack(Stack):
             synth=ShellStep("Synth",
                 input=CodePipelineSource.git_hub("JoHnZIN108/cicdproject", "master"),
                 install_commands=[
-                    "python -m pip install --upgrade pip",  # Update pip
-                    "pip install -r requirements.txt",      # Install Python dependencies
+                    "npm install -g aws-cdk",
+                    "python -m pip install --upgrade pip",
+                    "pip install -r requirements.txt"    # Install Python dependencies
                 ],
                 commands=[
                     "npx cdk synth"  # Synthesize the CDK app
