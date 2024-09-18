@@ -29,4 +29,5 @@ class ResourceStack(Stack):
         bucket = s3.Bucket(self, "MyBucket",
                            versioned=True,
                            bucket_name="my-demo-bucket-s3",
+                           removal_policy=s3.RemovalPolicy.DESTROY,
                            block_public_access=s3.BlockPublicAccess.BLOCK_ALL)
