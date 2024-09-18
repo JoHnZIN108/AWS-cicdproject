@@ -1,5 +1,6 @@
 from constructs import Construct
 from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
+import aws_cdk as cdk
 from aws_cdk import (
     Stack,
     Stage,
@@ -29,4 +30,5 @@ class ResourceStack(Stack):
         bucket = s3.Bucket(self, "MyBucket",
                            versioned=True,
                            bucket_name="my-demo-bucket-s3",
+                           removal_policy=cdk.RemovalPolicy.DESTROY,
                            block_public_access=s3.BlockPublicAccess.BLOCK_ALL)
