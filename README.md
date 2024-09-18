@@ -1,5 +1,5 @@
 # Overview
-This project is just to practice CI/CD project using AWS code pipeline to a stack containing lambda, SQS,S3
+This project is designed to practice CI/CD workflows using AWS CodePipeline, focusing on deploying a stack that includes Lambda functions, SQS queues, and S3 buckets.
 
 # AWS Code pipeline:
 ![image](https://github.com/user-attachments/assets/56d0fed7-a4a0-4606-8290-a6f4bd443c11)
